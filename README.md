@@ -2,20 +2,22 @@
 
 ## Overview
 
-A simple and efficient task management mobile application built with Flutter.
-This app allows users to create, update, delete, and search tasks, with persistent local storage.
+The Task Manager App is a simple yet scalable mobile application built with Flutter. It allows users to manage daily tasks efficiently by providing core task management features such as creating, updating, deleting, and searching tasks.
+
+The goal of this project is to demonstrate strong understanding of state management, local data persistence, clean architecture principles, and mobile UI/UX best practices.
 
 ---
 
 ## Features
 
-* Add new tasks with title and description
+* Create new tasks with title and description
 * Edit existing tasks
-* Mark tasks as completed
+* Mark tasks as completed/uncompleted
 * Delete tasks with confirmation dialog
-* Search tasks in real-time
-* Persistent storage using Hive
-* Clean and responsive UI
+* Real-time search functionality
+* Persistent local storage (data remains after app restart)
+* Empty state UI when no tasks are available
+* User feedback via Snackbars
 
 ---
 
@@ -32,45 +34,52 @@ This separation ensures scalability, maintainability, and clean code organizatio
 
 ## State Management
 
-Riverpod is used for state management because:
+The app uses Riverpod for state management.
 
-* It provides a clean and testable approach
-* It separates business logic from UI
-* It improves scalability for larger applications
+Why Riverpod?
+* Ensures separation of business logic from UI
+* Provides reactive and predictable state updates
+* Scales well for larger applications
+* Easier to test and maintain compared to traditional approaches
 
 ---
 
 ## Local Storage
 
-Hive was used for local data persistence because:
+The app uses Hive for local data persistence.
 
-* It is lightweight and fast
-* No need for complex setup
-* Works well for offline-first apps
+Why Hive?
+* Lightweight and fast (No SQL overhead)
+* Works efficiently for offline-first applications
+* Simple integration with Flutter
+* Ideal for storing structured objects like tasks
 
 ---
 
 ## UI/UX Considerations
 
-* Simple and intuitive interface
-* Clear empty state when no tasks exist
-* Visual feedback using Snackbars
-* Task completion indicated with strikethrough text
+* Clean and minimal interface for better usability
+* Consistent spacing and layout structure
+* Visual feedback for user actions (Snackbars)
+* Task completion visually indicated using strikethrough text
+* Confirmation dialog to prevent accidental deletions
+* Search input for quick task filtering
 
 ---
 
 ## Challenges
 
-* Managing state updates efficiently with Hive
-* Structuring the app with clean architecture within a short time
-* Ensuring smooth UX while keeping the implementation simple
+* Managing synchronization between Hive storage and Riverpod state
+* Structuring the project with clean architecture within a limited timeframe
+* Ensuring smooth user experience while maintaining simplicity
 
 ---
 
 ## Assumptions
 
-* Tasks are stored locally (no backend required)
-* Internet connection is not required for app functionality
+* The application is fully offline (no backend integration required)
+* Tasks are stored locally on the device
+* No authentication is required for this version
 
 ---
 
