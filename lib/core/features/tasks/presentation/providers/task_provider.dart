@@ -3,8 +3,9 @@ import 'package:hive/hive.dart';
 import '../../data/models/task_model.dart';
 import 'package:uuid/uuid.dart';
 
-final taskProvider =
-    StateNotifierProvider<TaskNotifier, List<TaskModel>>((ref) {
+final taskProvider = StateNotifierProvider<TaskNotifier, List<TaskModel>>((
+  ref,
+) {
   return TaskNotifier();
 });
 
@@ -14,6 +15,24 @@ class TaskNotifier extends StateNotifier<List<TaskModel>> {
   }
 
   final box = Hive.box<TaskModel>('tasksBox');
+
+  String searchQuery = '';
+
+  void searchTasks(String query) {
+    searchQuery = query;
+
+    final allTasks = box.values.toList();
+
+    if (query.isEmpty) {
+      state = allTasks;
+    } else {
+      state = allTasks
+          .where(
+            (task) => task.title.toLowerCase().contains(query.toLowerCase()),
+          )
+          .toList();
+    }
+  }
 
   void loadTasks() {
     state = box.values.toList();
