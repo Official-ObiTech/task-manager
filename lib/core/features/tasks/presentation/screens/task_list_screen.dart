@@ -53,6 +53,8 @@ class TaskListScreen extends ConsumerWidget {
                           ),
                           subtitle: Text(task.description),
 
+
+
                           // TOGGLE
                           leading: Checkbox(
                             value: task.isCompleted,
@@ -62,10 +64,11 @@ class TaskListScreen extends ConsumerWidget {
                                   .toggleTask(task.id);
                             },
                           ),
+                          
 
                           // DELETE
                           trailing: IconButton(
-                            icon: const Icon(Icons.delete),
+                            icon: const Icon(Icons.delete, color: Colors.red),
                             onPressed: () {
                               showDialog(
                                 context: context,
@@ -96,7 +99,10 @@ class TaskListScreen extends ConsumerWidget {
                                           ),
                                         );
                                       },
-                                      child: const Text("Delete"),
+                                      child: const Text(
+                                        "Delete",
+                                        style: TextStyle(color: Colors.red),
+                                      ),
                                     ),
                                   ],
                                 ),
