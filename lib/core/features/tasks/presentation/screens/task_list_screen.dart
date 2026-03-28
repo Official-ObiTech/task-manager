@@ -38,6 +38,10 @@ class TaskListScreen extends ConsumerWidget {
                       final task = tasks[index];
 
                       return Card(
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
                         margin: const EdgeInsets.symmetric(
                           horizontal: 12,
                           vertical: 6,
@@ -53,8 +57,6 @@ class TaskListScreen extends ConsumerWidget {
                           ),
                           subtitle: Text(task.description),
 
-
-
                           // TOGGLE
                           leading: Checkbox(
                             value: task.isCompleted,
@@ -64,7 +66,6 @@ class TaskListScreen extends ConsumerWidget {
                                   .toggleTask(task.id);
                             },
                           ),
-                          
 
                           // DELETE
                           trailing: IconButton(
