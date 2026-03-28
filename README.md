@@ -91,7 +91,7 @@ Approximately 4–6 hours
 
 ## APK Download
 
-[Download APK](PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE)
+[Download APK](https://drive.google.com/file/d/1_IelF7o4J3hZabKIGzQoTsqBT4cugevd/view?usp=sharing)
 
 ---
 
